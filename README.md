@@ -2,6 +2,7 @@
 Install notes for installing arch linux on pi proxmox
 
 
+
 fdisk -l
 fdisk /dev/sda
 n,p,+512M
@@ -19,7 +20,7 @@ timedatectl list-timezones
 timedatectl set-timezone America/New_York
 
 nano /etc/locale.gen
-# uncomment en_US.UTF-8 UTF-8
+uncomment en_US.UTF-8 UTF-8
 
 locale-gen
 echo LANG=en_US.UTF-8 > /etc/locale.conf
