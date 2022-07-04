@@ -4,10 +4,15 @@ Install notes for installing arch linux on pi proxmox
 
 
 fdisk -l
+
 fdisk /dev/sda
+
 n,p,+512M
+
 t,ef
+
 n,p,w
+
 mkfs.fat -F32 /dev/sda1
 mkfs.ext4 /dev/sda2
 pacman -Syy
