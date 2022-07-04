@@ -44,13 +44,18 @@ export LANG=en_US.UTF-8
 echo myarch > /etc/hostname
 
 touch /etc/hosts
-127.0.0.1	localhost
+
+```127.0.0.1	localhost
 ::1		localhost
 127.0.1.1	myarch
+```
 
 passwd
+
 pacman -S grub efibootmgr
+
 mkdir /boot/efi
+
 mount /dev/sda1 /boot/efi
 
 grub-install --target=aarch64-efi --bootloader-id=GRUB --efi-directory=/boot/efi
@@ -58,7 +63,9 @@ grub-install --target=aarch64-efi --bootloader-id=GRUB --efi-directory=/boot/efi
 grub-mkconfig -o /boot/grub/grub.cfg
 
 pacman -S sudo
+
 useradd -m username
+
 passwd username
 
 usermod -aG wheel,audio,video,storage username
@@ -78,7 +85,9 @@ systemctl enable NetworkManager.service
 exit
 
 umount /mnt
+
 umount -l /mnt
+
 shutdown now
 
 
