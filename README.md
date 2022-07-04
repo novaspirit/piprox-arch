@@ -14,21 +14,31 @@ t,ef
 n,p,w
 
 mkfs.fat -F32 /dev/sda1
+
 mkfs.ext4 /dev/sda2
+
 pacman -Syy
+
 mount /dev/sda2 /mnt
+
 pacstrap /mnt base linux linux-firmware vim nano
+
 genfstab -U /mnt >> /mnt/etc/fstab
+
 arch-chroot /mnt
 
 timedatectl list-timezones
+
 timedatectl set-timezone America/New_York
 
 nano /etc/locale.gen
+
 uncomment en_US.UTF-8 UTF-8
 
 locale-gen
+
 echo LANG=en_US.UTF-8 > /etc/locale.conf
+
 export LANG=en_US.UTF-8
 
 echo myarch > /etc/hostname
