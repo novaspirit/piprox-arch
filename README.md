@@ -8,21 +8,44 @@ video - [Installing Arch Linux on Pi Proxmox](https://youtu.be/GvwD9pXYJi4}
 
 ## Instructions
 
+Formatting the drive.
+
+### Listing all the disk
+
 ~~~~bash
 fdisk -l
 ~~~~
 
+### Selecting the disk
+
+~~~~bash
 fdisk /dev/sda
+~~~~
 
+### partioning the EFI disk
+
+~~~~
 n,p,+512M
-
 t,ef
+~~~~
 
+### partitioning the Main disk
+
+~~~~
 n,p,w
+~~~~
 
+### Formating the EFI disk to Fat32
+
+~~~~bash
 mkfs.fat -F32 /dev/sda1
+~~~~
 
+### Formating the Main disk to EXT4
+
+~~~~bash
 mkfs.ext4 /dev/sda2
+~~~~
 
 pacman -Syy
 
