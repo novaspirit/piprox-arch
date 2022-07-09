@@ -4,7 +4,7 @@
 
 Install notes for installing arch linux on pi proxmox
 
-video - [Installing Arch Linux on Pi Proxmox](https://youtu.be/GvwD9pXYJi4}
+video - [Installing Arch Linux on Pi Proxmox](https://youtu.be/GvwD9pXYJi4)
 
 ## Instructions
 
